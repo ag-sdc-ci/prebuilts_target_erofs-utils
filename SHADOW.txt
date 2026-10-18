@@ -1,0 +1,6 @@
+shadow prebuilt repo: erofs-utils (target)
+  upstream: external/erofs-utils
+  api-level: 34 (branch 34-20261016)
+  blobs: org.blisslabs.ag.ext.erofs.utils.apex
+  dev-src: extracted extractive dual-slice payload (mkfs.erofs, make_erofs, fsck.erofs, dump.erofs, liberofs.a, exported headers) + root Android.bp
+  date: 2026-10-16

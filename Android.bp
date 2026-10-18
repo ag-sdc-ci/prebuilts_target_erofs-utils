@@ -1,0 +1,114 @@
+// Auto-generated prebuilt APEX Blueprint for external/erofs-utils
+// Staged from Extractive APEX package: ext-erofs-utils (org.blisslabs.ag.ext.erofs-utils)
+
+package {
+    default_applicable_licenses: ["external_erofs-utils_license"],
+}
+
+license {
+    name: "external_erofs-utils_license",
+    visibility: [":__subpackages__"],
+    license_kinds: [
+        "SPDX-license-identifier-GPL",
+        "SPDX-license-identifier-GPL-2.0",
+        "SPDX-license-identifier-LGPL",
+    ],
+    license_text: [
+        "COPYING",
+    ],
+}
+
+cc_defaults {
+    name: "erofs-utils_export_defaults",
+}
+
+cc_defaults {
+    name: "erofs-utils_defaults",
+    defaults: ["erofs-utils_export_defaults"],
+}
+
+cc_library_headers {
+    name: "liberofs_headers",
+    vendor_available: true,
+    product_available: true,
+    recovery_available: true,
+    host_supported: true,
+    export_include_dirs: ["include"],
+}
+
+cc_prebuilt_library_static {
+    name: "liberofs",
+    host_supported: true,
+    recovery_available: true,
+    vendor_available: true,
+    product_available: true,
+    check_elf_files: false,
+    export_include_dirs: ["include"],
+    target: {
+        android: {
+            srcs: ["target/lib64/liberofs.a"],
+        },
+        host: {
+            srcs: ["host/lib64/liberofs.a"],
+        },
+    },
+}
+
+cc_prebuilt_binary {
+    name: "mkfs.erofs",
+    host_supported: true,
+    recovery_available: true,
+    vendor_available: true,
+    product_available: true,
+    check_elf_files: false,
+    target: {
+        android: {
+            srcs: ["target/bin/mkfs.erofs"],
+        },
+        host: {
+            srcs: ["host/bin/mkfs.erofs"],
+        },
+    },
+}
+
+cc_prebuilt_binary {
+    name: "make_erofs",
+    device_supported: false,
+    host_supported: true,
+    check_elf_files: false,
+    srcs: ["host/bin/make_erofs"],
+}
+
+cc_prebuilt_binary {
+    name: "dump.erofs",
+    host_supported: true,
+    recovery_available: true,
+    vendor_available: true,
+    product_available: true,
+    check_elf_files: false,
+    target: {
+        android: {
+            srcs: ["target/bin/dump.erofs"],
+        },
+        host: {
+            srcs: ["host/bin/dump.erofs"],
+        },
+    },
+}
+
+cc_prebuilt_binary {
+    name: "fsck.erofs",
+    host_supported: true,
+    recovery_available: true,
+    vendor_available: true,
+    product_available: true,
+    check_elf_files: false,
+    target: {
+        android: {
+            srcs: ["target/bin/fsck.erofs"],
+        },
+        host: {
+            srcs: ["host/bin/fsck.erofs"],
+        },
+    },
+}
